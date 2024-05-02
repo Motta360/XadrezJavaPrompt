@@ -22,7 +22,7 @@ public class Programa {
          try {
             
             UI.clearScreen();
-            UI.printBoard(cm1.getPieces());
+            UI.printMatch(cm1);
              System.out.println("");
              System.out.println("Print Source: ");
              ChessPosition source = UI.readChessPosition(sc);
