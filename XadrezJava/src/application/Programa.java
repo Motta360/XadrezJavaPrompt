@@ -18,18 +18,23 @@ public class Programa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
          ChessMatch cm1 = new ChessMatch();
+         while(true){
          try {
-            while(true){
+            
             UI.clearScreen();
             UI.printBoard(cm1.getPieces());
              System.out.println("");
              System.out.println("Print Source: ");
              ChessPosition source = UI.readChessPosition(sc);
+             
+             boolean[][] possibleMoves = cm1.possibleMoves(source);
+             UI.clearScreen();
+             UI.printBoard(cm1.getPieces(),possibleMoves);
              System.out.println("");
              System.out.println("Target: ");
              ChessPosition target = UI.readChessPosition(sc);
              ChessPiece capturedpiece = cm1.performChessmove(source, target);
-         }
+         
         } catch (ChessException e) {
              System.out.println(e.getMessage());
              sc.nextLine();
@@ -37,7 +42,7 @@ public class Programa {
          catch (InputMismatchException e) {
              System.out.println(e.getMessage());
              sc.nextLine();
-        }
+        }}
          
     }
 }
