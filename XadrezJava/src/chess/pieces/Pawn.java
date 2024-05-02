@@ -12,7 +12,7 @@ import chess.Color;
  */
 public class Pawn extends ChessPiece{
 
-    public Pawn(Color color, Board board) {
+    public Pawn(Board board, Color color) {
         super(color, board);
     }
 
