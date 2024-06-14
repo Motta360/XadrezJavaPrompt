@@ -43,8 +43,12 @@ public class Programa {
 
                 if (cm1.getPromoted() != null) {
                     System.out.println("Enter Piece for Promotion (B/N/R/Q)");
-                    String type = sc.nextLine();
-                    cm1.replacePromotedPiece(type);
+                    String q = sc.nextLine().toUpperCase();
+                    while(!q.equals("B") && !q.equals("N") && !q.equals("R")&& !q.equals("Q")){
+                        System.out.println("Invalid value!Enter Piece for Promotion (B/N/R/Q)"); 
+                        q =  sc.nextLine().toUpperCase();
+                    }
+                    cm1.replacePromotedPiece(q);
                 }
             } catch (ChessException e) {
                 System.out.println(e.getMessage());

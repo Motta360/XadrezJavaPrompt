@@ -10,7 +10,6 @@ import chess.pieces.Knight;
 import chess.pieces.Pawn;
 import chess.pieces.Queen;
 import chess.pieces.Rook;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -111,7 +110,7 @@ public class ChessMatch {
             throw  new IllegalStateException("Não há peça para ser promovida");
         }
         if(!q.equals("B") && !q.equals("N") && !q.equals("R")&& !q.equals("Q")){
-            throw new InvalidParameterException("Invalid Type for pormotion");
+            return promoted;
         }
         
         Position pos = promoted.getChessPosition().toPosition();
